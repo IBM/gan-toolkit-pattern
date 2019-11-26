@@ -63,11 +63,6 @@ your systems more effectively.
 * [PyTorch](https://pytorch.org/): An open source machine learning framework that accelerates the path from research prototyping to production deployment.
 * [Tensorflow](https://www.tensorflow.org/): An end-to-end open source machine learning platform.
 
-## Included Components
-
- * [Neural Network Modeller (NNM)](https://dataplatform.cloud.ibm.com/docs/content/wsj/analyze-data/ml-canvas-nnd-nodes.html) 
- * [Watson Studio](https://cloud.ibm.com/catalog/services/watson-studio)
-
 ## Build the Web App and Deploy in IBM Cloud
 
 Follow these steps to setup and run this code pattern. The steps are
