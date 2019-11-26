@@ -1,0 +1,1 @@
+web: python agant/main.py --config agant/configs/gan_gan.json
