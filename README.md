@@ -165,10 +165,11 @@ _Note: The app requires atleast 2GB in memory quota (as mentioned in the manifes
 
 ### 9. Obtain the GAN Generated Images and Ouput 
 Default input and output paths (override these paths in the GAN config file)
-    - `logs/` : training logs
-    - `saved_models/` : saved trained models
-    - `train_results/` : saved all the intermediate and final generated images
-    - `datasets/` : input dataset path 
+
+    * `logs/` : training logs
+    * `saved_models/` : saved trained models
+    * `train_results/` : saved all the intermediate generated images
+    * `datasets/` : input dataset path 
 
 Login to [IBM Cloud](https://cloud.ibm.com/) and open the corresponding `Cloud Foundary Appliation` from your dashboard. When you open the `runtime` on the left side pane, and connect to the `runtime` using SSH, you can find these folders with the outputs, as follows,
 
@@ -212,10 +213,10 @@ Login to [IBM Cloud](https://cloud.ibm.com/) and open the corresponding `Cloud F
     ```
 
 4. Default input and output paths (override these paths in the config file)
-    - `logs/` : training logs
-    - `saved_models/` : saved trained models
-    - `train_results/` : saved all the intermediate generated images
-    - `datasets/` : input dataset path 
+    * `logs/` : training logs
+    * `saved_models/` : saved trained models
+    * `train_results/` : saved all the intermediate generated images
+    * `datasets/` : input dataset path 
 
 ## Analyze Results
 
