@@ -2,6 +2,7 @@
 train_results/
 saved_models/
 logs/
+uploads/
 
 # Mac gitignore
 **/.DS_Store
