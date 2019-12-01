@@ -135,30 +135,45 @@ The detailed documentation of the config files are provided [here](https://githu
 
 Edit `manifest.yaml` in your root folder with the following content,
 ```
-domain: mybluemix.net
-name: <application-name>
-host: <application-name>
+applications:
+ - name: <application-name>
+   random-route: true
+   buildpack: python_buildpack
+   command: python app.py
+   disk_quota: 2G
+   memory: 4G
+   timeout: 600
 ```
-_Note: The `application-name` has to be unique at the entire IBM Cloud level_
+_Note: The `<application-name>` has to be unique at the entire IBM Cloud level_
 
 Edit `Procfile` in your root folder with the path of your GAN config file,
 ```
-web: python agant/main.py --config <path-to-your-GAN-Config-File>
+web: python app.py
+```
+
+Also note that, this app is tested extensively for `Python 3.6.8`. If you want to play around with different buildpack versions of Python, edit the `runtime.txt` file,
+```
+python-3.6.8
 ```
 
 ### 8. Push the App to a new Python Runtime in IBM Cloud
 
 ```
-ibmcloud app push <application-name> -b python_buildpack -f manifest.yaml
+ibmcloud app push
 ```
-_Note: The app requires atleast 1GB in memory quota. The maximum memory quota for a `Lite account` is 256 MB and can be increased only by upgrading to a billable account._
+_Note: The app requires atleast 2GB in memory quota (as mentioned in the manifest file). The maximum memory quota for a `Lite account` is 256 MB and can be increased to 2GB only by upgrading to a billable account._
 
 ### 9. Obtain the GAN Generated Images and Ouput 
 Default input and output paths (override these paths in the GAN config file)
-    `logs/` : training logs
-    `saved_models/` : saved trained models
-    `train_results/` : saved all the intermediate and final generated images
-    `datasets/` : input dataset path 
+    - `logs/` : training logs
+    - `saved_models/` : saved trained models
+    - `train_results/` : saved all the intermediate and final generated images
+    - `datasets/` : input dataset path 
+
+Login to [IBM Cloud](https://cloud.ibm.com/) and open the corresponding `Cloud Foundary Appliation` from your dashboard. When you open the `runtime` on the left side pane, and connect to the `runtime` using SSH, you can find these folders with the outputs, as follows,
+
+![GAN Architecture](images/output.png?raw=true "Obtain the output from Python Runtime")
+*Fig. 3: Obtain the output logs, trained model, and generated images from Python Runtime*
 
 ## (Or) Run Locally
 
@@ -183,7 +198,7 @@ Default input and output paths (override these paths in the GAN config file)
     $ cd gan-toolkit
     ```
 
-2. Install all the requirements. Tested for Python 3.5.x+
+2. Install all the requirements. Tested for Python 3.6.x+
 
     ```shell
     $ pip install -r requirements.txt
@@ -197,10 +212,10 @@ Default input and output paths (override these paths in the GAN config file)
     ```
 
 4. Default input and output paths (override these paths in the config file)
-    `logs/` : training logs
-    `saved_models/` : saved trained models
-    `train_results/` : saved all the intermediate generated images
-    `datasets/` : input dataset path 
+    - `logs/` : training logs
+    - `saved_models/` : saved trained models
+    - `train_results/` : saved all the intermediate generated images
+    - `datasets/` : input dataset path 
 
 ## Analyze Results
 
@@ -210,7 +225,7 @@ The trained GAN model generates new images that looks very similar to the input 
 <img src="images/dcgan-dcgan.png" width="250" height="250" /> <img src="images/dcgan-gan.png" width="250" height="250" />
 </p>
 
-*Fig. 3: (Left) Fashion images generated using DCGAN model. (Right) Fashion images generated using customized DCGAN-generator and GAN-discriminator*
+*Fig. 4: (Left) Fashion images generated using DCGAN model. (Right) Fashion images generated using customized DCGAN-generator and GAN-discriminator*
 
 
 # Related IBM Developer content
