@@ -1,4 +1,4 @@
-flask==0.12.2
+flask>=1.0.0
 flask_cors==3.0.3
 torch==0.4.1
 numpy==1.14.1
