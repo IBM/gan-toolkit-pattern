@@ -61,7 +61,6 @@ However, we propose a simple JSON representation of defining a GAN model, extend
 your systems more effectively.
 * [Flask](https://palletsprojects.com/p/flask/): A lightweight Python web application framework.
 * [PyTorch](https://pytorch.org/): An open source machine learning framework that accelerates the path from research prototyping to production deployment.
-* [Tensorflow](https://www.tensorflow.org/): An end-to-end open source machine learning platform.
 
 ## Build the Web App and Deploy in IBM Cloud
 
