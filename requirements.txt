@@ -1,7 +1,6 @@
+flask==0.12.2
+flask_cors==3.0.3
 torch==0.4.1
 numpy==1.14.1
 torchvision==0.2..1
 validator.py==1.2.5
-tqdm==4.26.0
-tensorflow>=1.6.0
-keras==2.1.3
