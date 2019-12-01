@@ -1,3 +1,8 @@
-domain: mybluemix.net
-name: gan-toolkit
-host: gan-toolkit
+applications:
+ - name: gan-toolkit-all
+   random-route: true
+   buildpack: python_buildpack
+   command: python app.py
+   disk_quota: 2G
+   memory: 4G
+   timeout: 600
