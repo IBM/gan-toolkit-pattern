@@ -24,16 +24,16 @@ def make_models(conf_data):
 	generator_optimizer_choice =  conf_data['generator']['optimizer']['choice']
 	discriminator_optimizer_choice = conf_data['discriminator']['optimizer']['choice']
 
-	Generator = getattr(importlib.import_module('models.generator.'+generator_model_choice),'Generator')
-	Discriminator = getattr(importlib.import_module('models.discriminator.'+discriminator_model_choice),'Discriminator')
+	Generator = getattr(importlib.import_module('agant.models.generator.'+generator_model_choice),'Generator')
+	Discriminator = getattr(importlib.import_module('agant.models.discriminator.'+discriminator_model_choice),'Discriminator')
 
-	g_loss_block = getattr(importlib.import_module('models.loss.'+generator_loss_choice),'loss_block')
-	d_loss_block = getattr(importlib.import_module('models.loss.'+discriminator_loss_choice),'loss_block')
-	g_optimizer_block = getattr(importlib.import_module('models.optimizer.'+generator_optimizer_choice),'optimizer_block')
+	g_loss_block = getattr(importlib.import_module('agant.models.loss.'+generator_loss_choice),'loss_block')
+	d_loss_block = getattr(importlib.import_module('agant.models.loss.'+discriminator_loss_choice),'loss_block')
+	g_optimizer_block = getattr(importlib.import_module('agant.models.optimizer.'+generator_optimizer_choice),'optimizer_block')
 	
-	d_optimizer_block = getattr(importlib.import_module('models.optimizer.'+discriminator_optimizer_choice),'optimizer_block')
+	d_optimizer_block = getattr(importlib.import_module('agant.models.optimizer.'+discriminator_optimizer_choice),'optimizer_block')
 
-	evaluation_metric= getattr(importlib.import_module('evaluation.'+conf_data['metric_evaluate']),'Metric')
+	evaluation_metric= getattr(importlib.import_module('agant.evaluation.'+conf_data['metric_evaluate']),'Metric')
 
 	#Commented out
 	# g_channels = int(conf_data['generator']['channels'])

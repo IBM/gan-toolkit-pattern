@@ -1,7 +1,7 @@
 import argparse
 import json
 
-def argument_parser():
+def argument_parser(config_file_path=None):
 	"""Argument Parser Fucntion.
 	
 	Parameters
@@ -52,7 +52,7 @@ def argument_parser():
 	parser.add_argument('--d_loss', type=str, help='Choice of loss for discriminator')
 	opt = parser.parse_args()
 	
-	if opt.configuration == None:
+	if opt.configuration == None and config_file_path == None:
 		conf_data = {}
 		conf_data['GAN_model'] = {}
 		conf_data['generator'] = {}
@@ -98,7 +98,10 @@ def argument_parser():
 		conf_data['discriminator']['optimizer']['b2'] = opt.g_b2
 		conf_data['discriminator']['loss'] = opt.g_loss
 	else: 
-		config_file = opt.configuration
+		if config_file_path:
+			config_file = config_file_path
+		else:
+			config_file = opt.configuration
 		with open(config_file) as json_data_file:
 			conf_data = json.load(json_data_file)
 	return conf_data

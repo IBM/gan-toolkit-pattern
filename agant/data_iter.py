@@ -3,9 +3,6 @@
 import os
 import random
 import math
-
-import tqdm
-
 import numpy as np
 import torch
 

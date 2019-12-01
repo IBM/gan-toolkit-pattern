@@ -22,7 +22,7 @@ def default_values(conf_data):
 	"""
 	Search for this -- Added Here
 	"""
-	with open('template_file.json') as json_data_file:
+	with open('agant/template_file.json') as json_data_file:
 		template_data = json.load(json_data_file)	
 
 	generator_model_choice = conf_data['generator']['choice']

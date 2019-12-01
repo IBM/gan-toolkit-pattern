@@ -1,10 +1,10 @@
 import torch
 import torch.nn as nn
 from torch.autograd import Variable
-from sequential_generate_sample import generate_samples
-from data_iter import GenDataIter, DisDataIter
-from sequential_eval_epoch import eval_epoch
-from target_lstm import TargetLSTM
+from agant.sequential_generate_sample import generate_samples
+from agant.data_iter import GenDataIter, DisDataIter
+from agant.sequential_eval_epoch import eval_epoch
+from agant.target_lstm import TargetLSTM
 
 
 class GANLoss(nn.Module):

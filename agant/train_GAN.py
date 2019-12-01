@@ -2,18 +2,18 @@ import torch
 from torch.autograd import Variable
 import numpy as np
 from torchvision.utils import save_image
-from training_fucntion_generator import training_fucntion_generator
-from compute_gradient_penalty import compute_gradient_penalty
-from sample_image import sample_image
+from agant.training_fucntion_generator import training_fucntion_generator
+from agant.compute_gradient_penalty import compute_gradient_penalty
+from agant.sample_image import sample_image
 
 #See how many of these can be removed
-from data_iter import GenDataIter, DisDataIter
-from target_lstm import TargetLSTM
-from rollout import Rollout
+from agant.data_iter import GenDataIter, DisDataIter
+from agant.target_lstm import TargetLSTM
+from agant.rollout import Rollout
 import torch.nn as nn
-from sequential_generate_sample import generate_samples
-from sequential_eval_epoch import eval_epoch
-from sequential_train_epoch import train_epoch
+from agant.sequential_generate_sample import generate_samples
+from agant.sequential_eval_epoch import eval_epoch
+from agant.sequential_train_epoch import train_epoch
 
 def train_GAN(conf_data):
 

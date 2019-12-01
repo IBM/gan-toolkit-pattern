@@ -1,8 +1,8 @@
 {
-    "result_path":"train_results",
-    "save_model_path":"saved_models",
+    "result_path":"agant/train_results",
+    "save_model_path":"agant/saved_models",
     "sample_interval":400,
-    "performance_log":"logs",
+    "performance_log":"agant/logs",
     "metric_evaluate":"MMD",
     "gan":{
         "GAN_model":{
