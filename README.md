@@ -75,6 +75,8 @@ described in detail below.
 6. [Create a GAN Config File](#6-Create-a-GAN-Config-File)
 7. [Edit the Manifest File and ProcFile](#7-Edit-the-Manifest-File-and-ProcFile)
 8. [Push the App to a new Python Runtime in IBM Cloud](#8-Push-the-App-to-a-new-Python-Runtime-in-IBM-Cloud)
+9. [Send the Config JSON file through a REST API Call](#9-Send-the-Config-JSON-file-through-a-REST-API-Call)
+10. [Obtain the GAN Generated Images and Ouput ](#10-Obtain-the-GAN-Generated-Images-and-Ouput)
 
 ### 1. Create an account with IBM Cloud
 
@@ -163,7 +165,21 @@ ibmcloud app push
 ```
 _Note: The app requires atleast 2GB in memory quota (as mentioned in the manifest file). The maximum memory quota for a `Lite account` is 256 MB and can be increased to 2GB only by upgrading to a billable account._
 
-### 9. Obtain the GAN Generated Images and Ouput 
+## 9. Send the Config JSON file through a REST API Call
+
+The skeleton of the API call, through a CURL command would be as follows,
+
+```
+curl -X POST http://<application-name>.net/gan_model -F config_file=@<path-of-config-file>
+```
+
+Here is an example for the REST API call,
+```
+curl -X POST \
+  http://gan-toolkit-all.mybluemix.net/gan_model -F config_file=@/agant/configs/gan_gan.json
+```
+
+### 10. Obtain the GAN Generated Images and Ouput 
 Default input and output paths (override these paths in the GAN config file)
 
     * `logs/` : training logs
